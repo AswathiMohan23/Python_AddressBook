@@ -2,11 +2,10 @@ print("\n\t\t\t\t\t\t\t\t WELCOME TO ADDRESSBOOK \n\t\t\t\t\t\t\t  *************
 
 
 def existing_contacts():
-    contact = []
-    person1 = {"first_name": "Tom", "second_name": "John", "address": "Abc Apartment", "city": "Bangalore",
-               "state": "Karnataka", "zip_code": "123456", "phn": "91 9495123456", "email": "tom@gmail.com"}
-    person2 = {"first_name": "Ravi", "second_name": "Dev", "address": "pq villa", "city": "Kochi", "state": "Kerala",
-               "zip_code": "120056", "phn": "91 9491122956", "email": "ravi@yahoo.com"}
+    person1.update({"first_name": "Tom", "second_name": "John", "address": "Abc Apartment", "city": "Bangalore",
+               "state": "Karnataka", "zip_code": "123456", "phn": "91 9495123456", "email": "tom@gmail.com"})
+    person2.update({"first_name": "Ravi", "second_name": "Dev", "address": "pq villa", "city": "Kochi", "state": "Kerala",
+               "zip_code": "120056", "phn": "91 9491122956", "email": "ravi@yahoo.com"})
     contact.append(person1)
     contact.append(person2)
     print("\t\t\t\t\t---------------- Existing contact book ------------------------ \n\n", contact)
@@ -30,7 +29,9 @@ def adding_details_from_console():
 
 
 # ------------------------------------------------------------------------------------------------------------------
-
+contact = []
+person1 = {}
+person2 = {}
 person3 = {}
 existing_contacts()
 adding_details_from_console()
