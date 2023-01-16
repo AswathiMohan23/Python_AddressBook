@@ -1,5 +1,6 @@
 print("\n\t\t\t\t\t\t\t\t WELCOME TO ADDRESSBOOK \n\t\t\t\t\t\t\t  ***************************\n")
 
+
 def adding_data_from_console():
     data = adding_details()
     return data
@@ -10,7 +11,7 @@ def display_contactBook():
 
 
 def adding_details():
-    print("-------------------------------------------- UC2 ---------------------------------------------------\n")
+    print("------------------------------------------------------ UC2 ----------------------------------------------------------------------\n")
 
     first_name = input("Enter the first name : ")
     second_name = input("Enter the first name : ")
@@ -25,16 +26,24 @@ def adding_details():
     return data
 
 
-"""def edit_data():
-    name_to_be_edited = input("enter the first name to edit the contact : ")
-    if person1.get('name_to_be_edited') == "Tom":
-        adding_details_from_console()"""
+def edit_data():
+    print("------------------------------------------------------ UC3 ----------------------------------------------------------------------\n")
 
+    name_to_be_edited = input("enter the first name to edit the contact : ")
+    if name_to_be_edited == person1.get('first_name'):
+        data = adding_details()
+        person1.update(data)
+        display_contactBook()
+    elif name_to_be_edited == person2.get('first_name'):
+        data = adding_details()
+        person2.update(data)
+        display_contactBook()
 
 # ------------------------------------------------------------------------------------------------------------------
 
+
 contact = []
-person1={"first_name": "Tom", "second_name": "John", "address": "Abc Apartment", "city": "Bangalore",
+person1 = {"first_name": "Tom", "second_name": "John", "address": "Abc Apartment", "city": "Bangalore",
                "state": "Karnataka", "zip_code": "123456", "phn": "91 9495123456", "email": "tom@gmail.com"}
 person2 = {"first_name": "Ravi", "second_name": "Dev", "address": "pq villa", "city": "Kochi", "state": "Kerala",
                "zip_code": "120056", "phn": "91 9491122956", "email": "ravi@yahoo.com"}
@@ -43,5 +52,4 @@ contact.append(person2)
 display_contactBook()
 person3 = adding_data_from_console()
 display_contactBook()
-
-#edit_data()
+edit_data()
