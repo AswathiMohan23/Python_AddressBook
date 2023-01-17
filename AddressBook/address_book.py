@@ -41,10 +41,10 @@ def edit_data(contact):
 def delete_contact(contact):
     print("\n------------------------------------------------------ UC4 ----------------------------------------------------------------------\n")
     name_to_be_deleted = input("enter the first name of the person whose details should be deleted : ")
-    for i in contact:
-        for j in i:
-            if i.get(j) == name_to_be_deleted:
-                contact.remove(i)
+    for k in contact:
+        for j in k:
+            if k.get(j) == name_to_be_deleted:
+                contact.remove(k)
                 after_deletion(contact, name_to_be_deleted)
 
 
@@ -69,4 +69,9 @@ display_contactBook(contact)
 edit_data(contact)
 display_contactBook(contact)
 delete_contact(contact)
+print("\n\n printing list using iterator : ")
+length = len(contact)
+for i in range(0, length):
+    iterator = iter(contact)
+    print(next(iterator))
 
