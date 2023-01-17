@@ -11,7 +11,7 @@ def adding_data_from_console(contact):
 
 
 def display_contactBook(contact):
-    print("\t\t\t\t\t---------------- Existing contact book ------------------------ \n\n", contact)
+    print("\n\t\t\t\t\t---------------- Existing contact book ------------------------ \n\n", contact)
 
 
 def adding_details():
@@ -41,24 +41,16 @@ def edit_data(contact):
 def delete_contact(contact):
     print("\n------------------------------------------------------ UC4 ----------------------------------------------------------------------\n")
     name_to_be_deleted = input("enter the first name of the person whose details should be deleted : ")
-    for dict in contact:
-        for lst in dict:
-            if dict.get(lst) == name_to_be_deleted:
-                contact.remove(lst)
+    for i in contact:
+        for j in i:
+            if i.get(j) == name_to_be_deleted:
+                contact.remove(i)
                 after_deletion(contact, name_to_be_deleted)
 
 
 def after_deletion(contact, name):
     print("\n******************************* After deleting details of", name, " ******************************\n")
     display_contactBook(contact)
-
-
-"""def get_value(contact, key):
-    result = [i[key] for i in contact]
-    if result == 'Tom':
-        data=adding_details()
-        contact.index()
-    return result"""
 
 
 def get_value(lst, key, value):
