@@ -69,5 +69,4 @@ display_contactBook(contact)
 edit_data(contact)
 display_contactBook(contact)
 delete_contact(contact)
-#display_contactBook(contact)
 
