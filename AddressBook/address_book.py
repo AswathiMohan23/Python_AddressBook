@@ -59,8 +59,9 @@ def get_value(lst, key, value):
             data = adding_details();
             return data
 
-
 # ------------------------------------------------------------------------------------------------------------------
+
+
 contact = []
 adding_data_from_console(contact)
 
@@ -68,5 +69,5 @@ display_contactBook(contact)
 edit_data(contact)
 display_contactBook(contact)
 delete_contact(contact)
-display_contactBook(contact)
+#display_contactBook(contact)
 
