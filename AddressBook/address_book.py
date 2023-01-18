@@ -2,7 +2,7 @@ print("\n\t\t\t\t\t\t\t\t\t WELCOME TO ADDRESSBOOK \n\t\t\t\t\t\t\t\t  *********
 
 
 def adding_data_from_console(contact):
-    print("\n------------------------------------------ UC5 (refactored UC2 to add multiple contacts) ----------------------------------------------------------------------\n")
+    print("\n ------------------------------------------ UC5 (refactored UC2 to add multiple contacts) ----------------------------------------------------------------------\n")
     limit = int(input("Enter the no of contacts you need to add to the contact book : "))
     for i in range (0,limit):
         print("\nenter the details of contact ", i)
@@ -59,19 +59,36 @@ def get_value(lst, key, value):
             data = adding_details();
             return data
 
+
+def multiple_addressBook(addressBook):
+    limit = int(input("Enter the number of address books you need : "))
+
+    for i in range(0, limit):
+        multiple_contact = []
+        print("\n\t\t\t ========>   AddressBook", i)
+        number = int(input("\nEnter the no of contacts you need to add to the address book : "))
+        for j in range(0, number):
+            contact1 = []
+
+            print("\n\t\t\tcontact", j, " of AddressBook ", i)
+            data = adding_details()
+            multiple_contact.append(data)
+            contact1.append(multiple_contact)
+            addressBook.update({i:contact1})
+
 # ------------------------------------------------------------------------------------------------------------------
 
-
 contact = []
+addressBook = {}
 adding_data_from_console(contact)
-
 display_contactBook(contact)
 edit_data(contact)
 display_contactBook(contact)
 delete_contact(contact)
 print("\n\n printing list using iterator : ")
 length = len(contact)
-for i in range(0, length):
-    iterator = iter(contact)
-    print(next(iterator))
+iterator = iter(contact)
+print(next(iterator))
+multiple_addressBook(addressBook)
 
+display_contactBook(addressBook)
